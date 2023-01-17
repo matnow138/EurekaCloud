@@ -1,0 +1,25 @@
+eureka:
+  client:
+    region: default
+    serviceUrl:
+      defaultZone: http://discUser:discPassword@localhost:8082/eureka
+    registryFetchIntervalSeconds: '5'
+spring:
+  application:
+    name: cloud
+  cloud:
+    config:
+      server:
+        git:
+          uri: file:///C:/application-config/
+          clone-on-start: true
+  security:
+    user:
+      name: configUser
+      password: configPassword
+server:
+  port: 8081
+
+
+
+##  curl http://configUser:configPassword@localhost:8081/EurekaServer/master to prove it work
